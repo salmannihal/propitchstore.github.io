@@ -1,0 +1,708 @@
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── FONTS & BASE ── */
+body {
+  font-family: 'Syne', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── HEADER ── */
+header {
+  background: #000000;
+  padding: 8px 20px;
+  text-align: center;
+  border-bottom: 8px solid #000000;
+}
+
+.header-logo {
+  width: 210px;
+  margin-bottom: 10px;
+  filter: invert(1);
+}
+.logo {
+  font-family: 'Bungee', cursive;
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 23px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* ── AUTH BUTTONS ── */
+.auth-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-signin, .btn-signup, .btn-profile {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 3px solid #fff;
+  transition: 0.2s;
+}
+
+.btn-signin {
+  background: transparent;
+  color: #fff;
+}
+
+.btn-signin:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-signup {
+  background: #fff;
+  color: #000;
+}
+
+.btn-signup:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.btn-profile {
+  background: transparent;
+  color: #fff;
+  border-style: dashed;
+}
+
+.btn-profile:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ── MODALS ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  border: 4px solid #000;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-box h2 {
+  font-family: 'Bungee', cursive;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.modal-box input {
+  padding: 12px 15px;
+  border: 3px solid #000;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.modal-submit {
+  background: #000;
+  color: #fff;
+  border: 3px solid #000;
+  padding: 14px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 5px;
+}
+
+.modal-submit:hover {
+  background: #fff;
+  color: #000;
+}
+
+.profile-avatar {
+  font-size: 60px;
+  text-align: center;
+}
+
+.profile-name {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+}
+
+.profile-info {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ── HERO ── */
+.hero {
+  background-color: #ffffff;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 40px 20px 300px;
+  border-bottom: 4px solid #000;
+}
+
+.hero h2 {
+  font-family: 'Bungee', cursive;
+  font-size: clamp(40px, 8vw, 80px);
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0px #000;
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 20px 50px;
+  border: 3px solid #000;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* ── PRODUCTS SECTION ── */
+#products {
+  padding: 80px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 60px;
+  text-decoration: underline;
+}
+
+/* ── PRODUCT GRID ── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* ── CARD ── */
+.card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 10px 10px 0px #000;
+}
+
+.card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: filter 0.3s;
+}
+
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  font-family: 'Bungee', cursive;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
+/* ── CARD BODY ── */
+.card-body {
+  padding: 20px 10px;
+}
+
+.card-cat {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.old-price {
+  font-size: 24px;
+  color: oklch(18.914% 0.02369 88.026);
+  text-decoration: line-through;
+  margin-left: 15px;
+}
+
+/* ── CARD BUTTONS ── */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cart, .btn-buy {
+  flex: 1;
+  padding: 12px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 3px solid #000;
+  transition: 0.2s;
+}
+
+.btn-cart {
+  background: #fff;
+  color: #000;
+}
+
+.btn-buy {
+  background: #000;
+  color: #fff;
+}
+
+.btn-cart:hover { background: #eee; }
+.btn-buy:hover { background: #333; }
+
+/* ── SALE BANNER ── */
+.banner {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.banner h2 {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.banner .hero-btn {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  background: #f5f5f5;
+  border-top: 4px solid #000;
+  border-bottom: 4px solid #000;
+  padding: 80px 20px;
+}
+
+.about-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-inner p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #222;
+}
+
+/* ── STORY SECTION ── */
+.story-section {
+  padding: 80px 20px;
+  background: #fff;
+  border-bottom: 4px solid #000;
+}
+
+.story-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.story-card {
+  border: 4px solid #000;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.story-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 #000;
+}
+
+.story-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid #000;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.story-card h3 {
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.story-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ── FAQ SECTION ── */
+.faq-section {
+  padding: 80px 20px;
+  background: #f5f5f5;
+  border-bottom: 4px solid #000;
+}
+
+.faq-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 3px solid #000;
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 20px 25px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #000;
+  color: #fff;
+}
+
+.faq-answer {
+  display: none;
+  padding: 20px 25px;
+  background: #fff;
+  border-top: 2px solid #000;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.faq-answer.open {
+  display: block;
+}
+
+.faq-arrow {
+  font-size: 14px;
+}
+
+/* ── HELP SECTION ── */
+.help-section {
+  padding: 80px 20px;
+  background: #000;
+  color: #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.help-section .section-title {
+  color: #fff;
+}
+
+.help-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.help-sub {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 40px;
+  margin-top: -40px;
+}
+
+.help-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.help-input, .help-textarea {
+  padding: 15px;
+  border: 3px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  outline: none;
+  width: 100%;
+}
+
+.help-input::placeholder, .help-textarea::placeholder {
+  color: #999;
+}
+
+.help-textarea {
+  height: 150px;
+  resize: none;
+}
+
+.help-submit {
+  background: #fff;
+  color: #000;
+  border: 3px solid #fff;
+  padding: 16px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.help-submit:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* ── SCROLLING TICKER ── */
+.ticker {
+  background: #000;
+  color: #fff;
+  padding: 15px 0;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  font-family: 'Bungee', cursive;
+  font-size: 18px;
+}
+
+.ticker-track {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(-100%); }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 40px 30px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 40px;
+}
+
+.footer-col h4 {
+  font-family: 'Bungee', cursive;
+  margin-bottom: 20px;
+}
+
+.footer-col a, .footer-col p {
+  font-size: 15px;
+  color: #ccc;
+  line-height: 2;
+}
+
+/* ── FOOTER LINK HOVER ── */
+.footer-col a:hover {
+  color: #fff;
+  text-decoration: underline;
+  padding-left: 5px;
+  transition: all 0.2s;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── FOOTER NAV FIX ── */
+.footer-nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: #ccc;
+  transition: all 0.2s;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ── SOCIAL ICONS ── */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #ccc;
+  color: #ccc;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.social-icons a:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 #fff;
+}
+
+/* ── FOOTER COL LINKS — LINE BY LINE ── */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col a {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 35px; }
+  .hero h2 { font-size: 50px; }
+}
